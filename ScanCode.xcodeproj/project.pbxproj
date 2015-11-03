@@ -487,6 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c009751a-1e2c-4f21-b7ea-a156397c7743";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -501,6 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c009751a-1e2c-4f21-b7ea-a156397c7743";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
