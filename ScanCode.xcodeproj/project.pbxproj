@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8251D131BE8535B00473B49 /* TextContentViewController.m */; };
 		D8328CE31BE757BA00454877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE21BE757BA00454877 /* main.m */; };
 		D8328CE61BE757BA00454877 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE51BE757BA00454877 /* AppDelegate.m */; };
 		D8328CE91BE757BA00454877 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE81BE757BA00454877 /* ViewController.m */; };
@@ -15,6 +16,15 @@
 		D8328CF11BE757BA00454877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8328CEF1BE757BA00454877 /* LaunchScreen.storyboard */; };
 		D8328CFC1BE757BA00454877 /* ScanCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CFB1BE757BA00454877 /* ScanCodeTests.m */; };
 		D8328D071BE757BA00454877 /* ScanCodeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D061BE757BA00454877 /* ScanCodeUITests.m */; };
+		D8328D161BE7582600454877 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D151BE7582600454877 /* QRCodeViewController.m */; };
+		D8328D191BE7586000454877 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D181BE7586000454877 /* QRView.m */; };
+		D8328D1C1BE7587100454877 /* QRCodeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D1B1BE7587100454877 /* QRCodeDao.m */; };
+		D8328D1E1BE75B1E00454877 /* qr_scan_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8328D1D1BE75B1E00454877 /* qr_scan_line@2x.png */; };
+		D8328D211BE761C100454877 /* WebContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D201BE761C100454877 /* WebContentViewController.m */; };
+		D8328D261BE761E500454877 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D231BE761E500454877 /* NJKWebViewProgress.m */; };
+		D8328D271BE761E500454877 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328D251BE761E500454877 /* NJKWebViewProgressView.m */; };
+		D8328D291BE7620300454877 /* bottom_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = D8328D281BE7620300454877 /* bottom_btn_back.png */; };
+		D8328D2B1BE7625200454877 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8328D2A1BE7625200454877 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8251D121BE8535B00473B49 /* TextContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentViewController.h; sourceTree = "<group>"; };
+		D8251D131BE8535B00473B49 /* TextContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentViewController.m; sourceTree = "<group>"; };
 		D8328CDE1BE757BA00454877 /* ScanCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScanCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8328CE21BE757BA00454877 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8328CE41BE757BA00454877 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +63,21 @@
 		D8328D021BE757BA00454877 /* ScanCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScanCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8328D061BE757BA00454877 /* ScanCodeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanCodeUITests.m; sourceTree = "<group>"; };
 		D8328D081BE757BA00454877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8328D141BE7582600454877 /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		D8328D151BE7582600454877 /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		D8328D171BE7586000454877 /* QRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRView.h; sourceTree = "<group>"; };
+		D8328D181BE7586000454877 /* QRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRView.m; sourceTree = "<group>"; };
+		D8328D1A1BE7587100454877 /* QRCodeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeDao.h; sourceTree = "<group>"; };
+		D8328D1B1BE7587100454877 /* QRCodeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeDao.m; sourceTree = "<group>"; };
+		D8328D1D1BE75B1E00454877 /* qr_scan_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qr_scan_line@2x.png"; sourceTree = "<group>"; };
+		D8328D1F1BE761C100454877 /* WebContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebContentViewController.h; sourceTree = "<group>"; };
+		D8328D201BE761C100454877 /* WebContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebContentViewController.m; sourceTree = "<group>"; };
+		D8328D221BE761E500454877 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		D8328D231BE761E500454877 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		D8328D241BE761E500454877 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		D8328D251BE761E500454877 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		D8328D281BE7620300454877 /* bottom_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_btn_back.png; sourceTree = "<group>"; };
+		D8328D2A1BE7625200454877 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8328D2B1BE7625200454877 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +109,7 @@
 		D8328CD51BE757BA00454877 = {
 			isa = PBXGroup;
 			children = (
+				D8328D2A1BE7625200454877 /* UIKit.framework */,
 				D8328CE01BE757BA00454877 /* ScanCode */,
 				D8328CFA1BE757BA00454877 /* ScanCodeTests */,
 				D8328D051BE757BA00454877 /* ScanCodeUITests */,
@@ -105,6 +134,22 @@
 				D8328CE51BE757BA00454877 /* AppDelegate.m */,
 				D8328CE71BE757BA00454877 /* ViewController.h */,
 				D8328CE81BE757BA00454877 /* ViewController.m */,
+				D8328D141BE7582600454877 /* QRCodeViewController.h */,
+				D8328D151BE7582600454877 /* QRCodeViewController.m */,
+				D8328D1A1BE7587100454877 /* QRCodeDao.h */,
+				D8328D1B1BE7587100454877 /* QRCodeDao.m */,
+				D8328D171BE7586000454877 /* QRView.h */,
+				D8328D181BE7586000454877 /* QRView.m */,
+				D8251D121BE8535B00473B49 /* TextContentViewController.h */,
+				D8251D131BE8535B00473B49 /* TextContentViewController.m */,
+				D8328D1F1BE761C100454877 /* WebContentViewController.h */,
+				D8328D201BE761C100454877 /* WebContentViewController.m */,
+				D8328D221BE761E500454877 /* NJKWebViewProgress.h */,
+				D8328D231BE761E500454877 /* NJKWebViewProgress.m */,
+				D8328D241BE761E500454877 /* NJKWebViewProgressView.h */,
+				D8328D251BE761E500454877 /* NJKWebViewProgressView.m */,
+				D8328D1D1BE75B1E00454877 /* qr_scan_line@2x.png */,
+				D8328D281BE7620300454877 /* bottom_btn_back.png */,
 				D8328CEA1BE757BA00454877 /* Main.storyboard */,
 				D8328CED1BE757BA00454877 /* Assets.xcassets */,
 				D8328CEF1BE757BA00454877 /* LaunchScreen.storyboard */,
@@ -207,6 +252,7 @@
 				TargetAttributes = {
 					D8328CDD1BE757BA00454877 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 4225KQ7WC5;
 					};
 					D8328CF61BE757BA00454877 = {
 						CreatedOnToolsVersion = 7.1;
@@ -245,6 +291,8 @@
 			files = (
 				D8328CF11BE757BA00454877 /* LaunchScreen.storyboard in Resources */,
 				D8328CEE1BE757BA00454877 /* Assets.xcassets in Resources */,
+				D8328D1E1BE75B1E00454877 /* qr_scan_line@2x.png in Resources */,
+				D8328D291BE7620300454877 /* bottom_btn_back.png in Resources */,
 				D8328CEC1BE757BA00454877 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8328D261BE761E500454877 /* NJKWebViewProgress.m in Sources */,
 				D8328CE91BE757BA00454877 /* ViewController.m in Sources */,
 				D8328CE61BE757BA00454877 /* AppDelegate.m in Sources */,
+				D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */,
+				D8328D161BE7582600454877 /* QRCodeViewController.m in Sources */,
 				D8328CE31BE757BA00454877 /* main.m in Sources */,
+				D8328D1C1BE7587100454877 /* QRCodeDao.m in Sources */,
+				D8328D211BE761C100454877 /* WebContentViewController.m in Sources */,
+				D8328D271BE761E500454877 /* NJKWebViewProgressView.m in Sources */,
+				D8328D191BE7586000454877 /* QRView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +399,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -363,9 +419,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,7 +445,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -401,8 +459,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -413,10 +472,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScanCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CLSC.ScanCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.scancode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +486,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ScanCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = CLSC.ScanCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev.scancode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -498,6 +563,7 @@
 				D8328D0D1BE757BA00454877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8328D0E1BE757BA00454877 /* Build configuration list for PBXNativeTarget "ScanCodeTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +572,7 @@
 				D8328D101BE757BA00454877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8328D111BE757BA00454877 /* Build configuration list for PBXNativeTarget "ScanCodeUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +581,7 @@
 				D8328D131BE757BA00454877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
