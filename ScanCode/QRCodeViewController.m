@@ -62,7 +62,7 @@
     labIntroudction.numberOfLines=2;
     labIntroudction.textAlignment = NSTextAlignmentCenter;
     labIntroudction.textColor=[UIColor whiteColor];
-    labIntroudction.text=@"请将二维码图像置于矩形方框内";
+    labIntroudction.text=@"Put the QR code in the square";
     [self.view addSubview:labIntroudction];
     
     bottomL= [[UILabel alloc] initWithFrame:CGRectMake(20, screenHeight-50, screenWidth-40, 20)];

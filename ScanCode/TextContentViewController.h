@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextContentViewController : UIViewController
+@interface TextContentViewController : UIViewController<UIGestureRecognizerDelegate>
+{
+    UIView * cv;
+}
 @property (nonatomic,strong)UIButton * backBtn;
 @property (nonatomic,strong)NSString * str;
 @end

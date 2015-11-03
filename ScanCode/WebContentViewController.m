@@ -19,6 +19,7 @@
     [self.view addSubview:webview];
     webview.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     webview.scrollView.delegate = self;
+    webview.scalesPageToFit = YES;
     
     _progressProxy = [[NJKWebViewProgress alloc] init];
     webview.delegate = _progressProxy;
@@ -51,6 +52,12 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0){
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     }
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [webview stopLoading];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 #pragma mark - NJKWebViewProgressDelegate
 -(void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress
