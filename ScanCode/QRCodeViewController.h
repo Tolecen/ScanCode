@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <SafariServices/SafariServices.h>
 
 @protocol QRCodeViewControllerDelegate <NSObject>
 

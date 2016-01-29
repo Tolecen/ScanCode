@@ -13,6 +13,7 @@
 #import "QRCodeDao.h"
 #import "WebContentViewController.h"
 #import "TextContentViewController.h"
+#import "ZBarReaderController.h"
 @interface QRCodeViewController ()
 
 {
@@ -20,6 +21,9 @@
     CGRect cropRect;
     UILabel * labIntroudction;
     UILabel * bottomL;
+    UIButton * lbBtn;
+    
+    BOOL canScan;
 }
 
 @end
@@ -29,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    canScan = YES;
 //    [self setupCamera];
     
     CGRect screenRect = [UIScreen mainScreen].bounds;
@@ -65,6 +69,18 @@
     labIntroudction.text=@"Put the QR code in the square";
     [self.view addSubview:labIntroudction];
     
+    lbBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [lbBtn setFrame:CGRectMake((self.view.frame.size.width-140)/2, screenHeight/2+110+20, 140, 35)];
+    lbBtn.backgroundColor = [UIColor clearColor];
+    lbBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [lbBtn setTitle:@"Select Photo" forState:UIControlStateNormal];
+    lbBtn.layer.cornerRadius = 5;
+    lbBtn.layer.borderWidth = 1;
+    lbBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    lbBtn.layer.masksToBounds = YES;
+    [self.view addSubview:lbBtn];
+    [lbBtn addTarget:self action:@selector(selectFromLib) forControlEvents:UIControlEventTouchUpInside];
+    
     bottomL= [[UILabel alloc] initWithFrame:CGRectMake(20, screenHeight-50, screenWidth-40, 20)];
     bottomL.backgroundColor = [UIColor clearColor];
     bottomL.font = [UIFont systemFontOfSize:12];
@@ -89,6 +105,7 @@
     _input = nil;
     _session = nil;
     _preview = nil;
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -99,6 +116,8 @@
     [self.view addSubview:qrRectView];
     [self.view bringSubviewToFront:labIntroudction];
     [self.view bringSubviewToFront:bottomL];
+    [self.view bringSubviewToFront:lbBtn];
+    
     CGFloat screenHeight = self.view.frame.size.height;
     CGFloat screenWidth = self.view.frame.size.width;
     [_output setRectOfInterest:CGRectMake(cropRect.origin.y / screenHeight,
@@ -160,6 +179,7 @@
 #pragma mark AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    
     NSString *stringValue;
     
     if ([metadataObjects count] >0) {
@@ -172,15 +192,28 @@
     NSLog(@"stringValue = %@", stringValue);
     
     if ([stringValue hasPrefix:@"http"]) {
-        WebContentViewController * web = [[WebContentViewController alloc] init];
-        web.urlStr = stringValue;
-        web.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentViewController:web animated:YES completion:^{
-            
-        }];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+            NSLog(@"111");
+            SFSafariViewController * sv = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:stringValue]];
+            sv.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+            [self presentViewController:sv animated:YES completion:^{
+                
+            }];
+        }
+        else{
+            NSLog(@"222");
+            WebContentViewController * web = [[WebContentViewController alloc] init];
+            web.urlStr = stringValue;
+            web.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self presentViewController:web animated:YES completion:^{
+                
+            }];
+        }
     }
     else
     {
+        NSLog(@"333");
         TextContentViewController * tb = [[TextContentViewController alloc] init];
         tb.str = stringValue;
         tb.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
@@ -188,6 +221,15 @@
             
         }];
     }
+}
+
+-(void)selectFromLib
+{
+    ZBarReaderController * zv = [[ZBarReaderController alloc] init];
+    zv.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:zv animated:YES completion:^{
+        
+    }];
 }
 
 /*
