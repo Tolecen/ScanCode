@@ -45,6 +45,22 @@
 		D8D63C011C5B3C55002C823B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63C001C5B3C55002C823B /* QuartzCore.framework */; };
 		D8D63C031C5B3C63002C823B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63C021C5B3C63002C823B /* libiconv.tbd */; };
 		D8D63C051C5B432A002C823B /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D63C041C5B432A002C823B /* libzbar.a */; };
+		D8D63C1B1C5B5D2F002C823B /* ALCameraView.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8D63C071C5B5D2F002C823B /* ALCameraView.strings */; };
+		D8D63C1C1C5B5D2F002C823B /* ALCameraViewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D63C081C5B5D2F002C823B /* ALCameraViewAssets.xcassets */; };
+		D8D63C1D1C5B5D2F002C823B /* ALImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C0A1C5B5D2F002C823B /* ALImageModel.swift */; };
+		D8D63C1E1C5B5D2F002C823B /* ALCameraShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C0C1C5B5D2F002C823B /* ALCameraShot.swift */; };
+		D8D63C1F1C5B5D2F002C823B /* ALImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C0D1C5B5D2F002C823B /* ALImageExtensions.swift */; };
+		D8D63C201C5B5D2F002C823B /* ALImageFetchingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C0E1C5B5D2F002C823B /* ALImageFetchingInteractor.swift */; };
+		D8D63C211C5B5D2F002C823B /* ALUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C0F1C5B5D2F002C823B /* ALUtilities.swift */; };
+		D8D63C221C5B5D2F002C823B /* ALCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C111C5B5D2F002C823B /* ALCameraViewController.swift */; };
+		D8D63C231C5B5D2F002C823B /* ALConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C121C5B5D2F002C823B /* ALConfirmViewController.swift */; };
+		D8D63C241C5B5D2F002C823B /* ALConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D63C131C5B5D2F002C823B /* ALConfirmViewController.xib */; };
+		D8D63C251C5B5D2F002C823B /* ALImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C141C5B5D2F002C823B /* ALImagePickerViewController.swift */; };
+		D8D63C261C5B5D2F002C823B /* ALImagePickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C151C5B5D2F002C823B /* ALImagePickerViewDelegate.swift */; };
+		D8D63C271C5B5D2F002C823B /* ALCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C171C5B5D2F002C823B /* ALCameraView.swift */; };
+		D8D63C281C5B5D2F002C823B /* ALCropOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C181C5B5D2F002C823B /* ALCropOverlay.swift */; };
+		D8D63C291C5B5D2F002C823B /* ALImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C191C5B5D2F002C823B /* ALImageCell.swift */; };
+		D8D63C2A1C5B5D2F002C823B /* ALPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D63C1A1C5B5D2F002C823B /* ALPermissionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +164,22 @@
 		D8D63C001C5B3C55002C823B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8D63C021C5B3C63002C823B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		D8D63C041C5B432A002C823B /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		D8D63C071C5B5D2F002C823B /* ALCameraView.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = ALCameraView.strings; sourceTree = "<group>"; };
+		D8D63C081C5B5D2F002C823B /* ALCameraViewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ALCameraViewAssets.xcassets; sourceTree = "<group>"; };
+		D8D63C0A1C5B5D2F002C823B /* ALImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImageModel.swift; sourceTree = "<group>"; };
+		D8D63C0C1C5B5D2F002C823B /* ALCameraShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCameraShot.swift; sourceTree = "<group>"; };
+		D8D63C0D1C5B5D2F002C823B /* ALImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImageExtensions.swift; sourceTree = "<group>"; };
+		D8D63C0E1C5B5D2F002C823B /* ALImageFetchingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImageFetchingInteractor.swift; sourceTree = "<group>"; };
+		D8D63C0F1C5B5D2F002C823B /* ALUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALUtilities.swift; sourceTree = "<group>"; };
+		D8D63C111C5B5D2F002C823B /* ALCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCameraViewController.swift; sourceTree = "<group>"; };
+		D8D63C121C5B5D2F002C823B /* ALConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALConfirmViewController.swift; sourceTree = "<group>"; };
+		D8D63C131C5B5D2F002C823B /* ALConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALConfirmViewController.xib; sourceTree = "<group>"; };
+		D8D63C141C5B5D2F002C823B /* ALImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImagePickerViewController.swift; sourceTree = "<group>"; };
+		D8D63C151C5B5D2F002C823B /* ALImagePickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImagePickerViewDelegate.swift; sourceTree = "<group>"; };
+		D8D63C171C5B5D2F002C823B /* ALCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCameraView.swift; sourceTree = "<group>"; };
+		D8D63C181C5B5D2F002C823B /* ALCropOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALCropOverlay.swift; sourceTree = "<group>"; };
+		D8D63C191C5B5D2F002C823B /* ALImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALImageCell.swift; sourceTree = "<group>"; };
+		D8D63C1A1C5B5D2F002C823B /* ALPermissionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALPermissionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +245,7 @@
 		D8328CE01BE757BA00454877 /* ScanCode */ = {
 			isa = PBXGroup;
 			children = (
+				D8D63C061C5B5D2F002C823B /* ALCameraViewController */,
 				D8D63BD71C5B3C18002C823B /* ZBarSDK */,
 				D8D63BBE1C5B3BBE002C823B /* LibQREncode */,
 				D8328CE41BE757BA00454877 /* AppDelegate.h */,
@@ -358,6 +391,61 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D8D63C061C5B5D2F002C823B /* ALCameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63C071C5B5D2F002C823B /* ALCameraView.strings */,
+				D8D63C081C5B5D2F002C823B /* ALCameraViewAssets.xcassets */,
+				D8D63C091C5B5D2F002C823B /* Models */,
+				D8D63C0B1C5B5D2F002C823B /* Utilities */,
+				D8D63C101C5B5D2F002C823B /* ViewController */,
+				D8D63C161C5B5D2F002C823B /* Views */,
+			);
+			path = ALCameraViewController;
+			sourceTree = "<group>";
+		};
+		D8D63C091C5B5D2F002C823B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63C0A1C5B5D2F002C823B /* ALImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D8D63C0B1C5B5D2F002C823B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63C0C1C5B5D2F002C823B /* ALCameraShot.swift */,
+				D8D63C0D1C5B5D2F002C823B /* ALImageExtensions.swift */,
+				D8D63C0E1C5B5D2F002C823B /* ALImageFetchingInteractor.swift */,
+				D8D63C0F1C5B5D2F002C823B /* ALUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D8D63C101C5B5D2F002C823B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63C111C5B5D2F002C823B /* ALCameraViewController.swift */,
+				D8D63C121C5B5D2F002C823B /* ALConfirmViewController.swift */,
+				D8D63C131C5B5D2F002C823B /* ALConfirmViewController.xib */,
+				D8D63C141C5B5D2F002C823B /* ALImagePickerViewController.swift */,
+				D8D63C151C5B5D2F002C823B /* ALImagePickerViewDelegate.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D8D63C161C5B5D2F002C823B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8D63C171C5B5D2F002C823B /* ALCameraView.swift */,
+				D8D63C181C5B5D2F002C823B /* ALCropOverlay.swift */,
+				D8D63C191C5B5D2F002C823B /* ALImageCell.swift */,
+				D8D63C1A1C5B5D2F002C823B /* ALPermissionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,9 +556,12 @@
 				D8328D1E1BE75B1E00454877 /* qr_scan_line@2x.png in Resources */,
 				D8328D291BE7620300454877 /* bottom_btn_back.png in Resources */,
 				D8328CEC1BE757BA00454877 /* Main.storyboard in Resources */,
+				D8D63C241C5B5D2F002C823B /* ALConfirmViewController.xib in Resources */,
 				D8D63BF91C5B3C18002C823B /* zbar-samples.png in Resources */,
+				D8D63C1C1C5B5D2F002C823B /* ALCameraViewAssets.xcassets in Resources */,
 				D8D63BF71C5B3C18002C823B /* zbar-help.html in Resources */,
 				D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */,
+				D8D63C1B1C5B5D2F002C823B /* ALCameraView.strings in Resources */,
 				D8D63BF81C5B3C18002C823B /* zbar-helpicons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,22 +588,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8328D261BE761E500454877 /* NJKWebViewProgress.m in Sources */,
+				D8D63C251C5B5D2F002C823B /* ALImagePickerViewController.swift in Sources */,
 				D8328CE91BE757BA00454877 /* ViewController.m in Sources */,
 				D8D63BD31C5B3BBE002C823B /* qrinput.c in Sources */,
 				D8328CE61BE757BA00454877 /* AppDelegate.m in Sources */,
 				D8D63BD51C5B3BBE002C823B /* rscode.c in Sources */,
+				D8D63C1E1C5B5D2F002C823B /* ALCameraShot.swift in Sources */,
 				D8D63BD01C5B3BBE002C823B /* mask.c in Sources */,
+				D8D63C201C5B5D2F002C823B /* ALImageFetchingInteractor.swift in Sources */,
+				D8D63C2A1C5B5D2F002C823B /* ALPermissionsView.swift in Sources */,
+				D8D63C261C5B5D2F002C823B /* ALImagePickerViewDelegate.swift in Sources */,
 				D8D63BD21C5B3BBE002C823B /* qrencode.c in Sources */,
 				D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */,
 				D8D63BD41C5B3BBE002C823B /* qrspec.c in Sources */,
 				D8D63BCF1C5B3BBE002C823B /* bitstream.c in Sources */,
+				D8D63C221C5B5D2F002C823B /* ALCameraViewController.swift in Sources */,
+				D8D63C231C5B5D2F002C823B /* ALConfirmViewController.swift in Sources */,
+				D8D63C211C5B5D2F002C823B /* ALUtilities.swift in Sources */,
+				D8D63C1D1C5B5D2F002C823B /* ALImageModel.swift in Sources */,
+				D8D63C271C5B5D2F002C823B /* ALCameraView.swift in Sources */,
 				D8328D161BE7582600454877 /* QRCodeViewController.m in Sources */,
 				D8328CE31BE757BA00454877 /* main.m in Sources */,
 				D8D63BD61C5B3BBE002C823B /* split.c in Sources */,
+				D8D63C291C5B5D2F002C823B /* ALImageCell.swift in Sources */,
+				D8D63C281C5B5D2F002C823B /* ALCropOverlay.swift in Sources */,
 				D8328D1C1BE7587100454877 /* QRCodeDao.m in Sources */,
 				D8328D211BE761C100454877 /* WebContentViewController.m in Sources */,
 				D8328D271BE761E500454877 /* NJKWebViewProgressView.m in Sources */,
 				D8328D191BE7586000454877 /* QRView.m in Sources */,
+				D8D63C1F1C5B5D2F002C823B /* ALImageExtensions.swift in Sources */,
 				D8D63BD11C5B3BBE002C823B /* QRCodeGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -663,13 +767,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScanCode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScanCode/ZBarSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
+				PRODUCT_MODULE_NAME = SCSwiftModule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -683,13 +788,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ScanCode/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScanCode/ZBarSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
+				PRODUCT_MODULE_NAME = SCSwiftModule;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

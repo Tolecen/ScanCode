@@ -226,6 +226,8 @@
 -(void)selectFromLib
 {
     ZBarReaderController * zv = [[ZBarReaderController alloc] init];
+//    zv.view.backgroundColor = [UIColor blackColor];
+    zv.navigationBar.barTintColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
     zv.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:zv animated:YES completion:^{
         
