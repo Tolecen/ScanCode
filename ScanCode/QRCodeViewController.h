@@ -24,7 +24,7 @@
 //@property (nonatomic, assign) BOOL isHome; //在线验证 YES， 其它 NO
 
 @property (nonatomic, weak) id<QRCodeViewControllerDelegate> delegate;
-
+@property (nonatomic, strong) void (^didDismissed)();
 @property (strong, nonatomic) AVCaptureDevice *device;
 @property (strong, nonatomic) AVCaptureDeviceInput *input;
 @property (strong, nonatomic) AVCaptureMetadataOutput *output;

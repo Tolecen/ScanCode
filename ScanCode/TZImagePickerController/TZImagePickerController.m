@@ -109,10 +109,10 @@
 - (void)showAlertWithTitle:(NSString *)title {
     if (iOS8Later) {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:nil]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
     } else {
-        [[[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"我知道了" otherButtonTitles:nil, nil] show];
+        [[[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }
 }
 
@@ -134,7 +134,7 @@
         _HUDLable = [[UILabel alloc] init];
         _HUDLable.frame = CGRectMake(0,40, 120, 50);
         _HUDLable.textAlignment = NSTextAlignmentCenter;
-        _HUDLable.text = @"正在处理...";
+        _HUDLable.text = @"Processing...";
         _HUDLable.font = [UIFont systemFontOfSize:15];
         _HUDLable.textColor = [UIColor whiteColor];
         

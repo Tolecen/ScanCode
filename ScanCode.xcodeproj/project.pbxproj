@@ -34,6 +34,7 @@
 		D814ED751C5EEC51009D7616 /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED5C1C5EEC51009D7616 /* UIView+Layout.m */; };
 		D814ED7A1C5EF284009D7616 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D814ED771C5EF284009D7616 /* ProgressHUD.bundle */; };
 		D814ED7B1C5EF284009D7616 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED791C5EF284009D7616 /* ProgressHUD.m */; };
+		D814ED7E1C5F006E009D7616 /* GenerateCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */; };
 		D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8251D131BE8535B00473B49 /* TextContentViewController.m */; };
 		D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8251D171BE8EB9A00473B49 /* Default-568h@2x.png */; };
 		D8328CE31BE757BA00454877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE21BE757BA00454877 /* main.m */; };
@@ -129,6 +130,8 @@
 		D814ED771C5EF284009D7616 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		D814ED781C5EF284009D7616 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		D814ED791C5EF284009D7616 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		D814ED7C1C5F006E009D7616 /* GenerateCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateCodeViewController.h; sourceTree = "<group>"; };
+		D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateCodeViewController.m; sourceTree = "<group>"; };
 		D8251D121BE8535B00473B49 /* TextContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentViewController.h; sourceTree = "<group>"; };
 		D8251D131BE8535B00473B49 /* TextContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentViewController.m; sourceTree = "<group>"; };
 		D8251D151BE8984700473B49 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				D8328CE51BE757BA00454877 /* AppDelegate.m */,
 				D8328CE71BE757BA00454877 /* ViewController.h */,
 				D8328CE81BE757BA00454877 /* ViewController.m */,
+				D814ED7C1C5F006E009D7616 /* GenerateCodeViewController.h */,
+				D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */,
 				D8328D141BE7582600454877 /* QRCodeViewController.h */,
 				D8328D151BE7582600454877 /* QRCodeViewController.m */,
 				D8328D1A1BE7587100454877 /* QRCodeDao.h */,
@@ -665,6 +670,7 @@
 				D8328D211BE761C100454877 /* WebContentViewController.m in Sources */,
 				D8328D271BE761E500454877 /* NJKWebViewProgressView.m in Sources */,
 				D8328D191BE7586000454877 /* QRView.m in Sources */,
+				D814ED7E1C5F006E009D7616 /* GenerateCodeViewController.m in Sources */,
 				D8D63BD11C5B3BBE002C823B /* QRCodeGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

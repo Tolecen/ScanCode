@@ -49,7 +49,7 @@
     [[TZImageManager manager] getAssetsFromFetchResult:_model.result allowPickingVideo:imagePickerVc.allowPickingVideo completion:^(NSArray<TZAssetModel *> *models) {
         _photoArr = [NSMutableArray arrayWithArray:models];
         [self configCollectionView];
-        [self configBottomToolBar];
+//        [self configBottomToolBar];
     }];
 }
 

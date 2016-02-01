@@ -69,12 +69,19 @@
     [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
-    _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width - 54, 10, 42, 42)];
-    [_selectButton setImage:[UIImage imageNamed:@"photo_def_photoPickerVc"] forState:UIControlStateNormal];
-    [_selectButton setImage:[UIImage imageNamed:@"photo_sel_photoPickerVc"] forState:UIControlStateSelected];
-    [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_naviBar addSubview:_selectButton];
+    _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _okButton.frame = CGRectMake(self.view.width - 54, 12, 44, 44);
+    _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
+    [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
+    [_okButton setTitleColor:kOKButtonTitleColorNormal forState:UIControlStateNormal];
+//    _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width - 54, 10, 42, 42)];
+//    [_selectButton setImage:[UIImage imageNamed:@"photo_def_photoPickerVc"] forState:UIControlStateNormal];
+//    [_selectButton setImage:[UIImage imageNamed:@"photo_sel_photoPickerVc"] forState:UIControlStateSelected];
+//    [_selectButton addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [_naviBar addSubview:_selectButton];
+    [_naviBar addSubview:_okButton];
     [_naviBar addSubview:_backButton];
     [self.view addSubview:_naviBar];
 }
@@ -85,37 +92,37 @@
     _toolBar.backgroundColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:1.0];
     _toolBar.alpha = 0.7;
     
-    TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
-    if (imagePickerVc.allowPickingOriginalPhoto) {
-        _originalPhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _originalPhotoButton.frame = CGRectMake(5, 0, 120, 44);
-        _originalPhotoButton.imageEdgeInsets = UIEdgeInsetsMake(0, -8, 0, 0);
-        _originalPhotoButton.contentEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
-        _originalPhotoButton.backgroundColor = [UIColor clearColor];
-        [_originalPhotoButton addTarget:self action:@selector(originalPhotoButtonClick) forControlEvents:UIControlEventTouchUpInside];
-        _originalPhotoButton.titleLabel.font = [UIFont systemFontOfSize:13];
-        [_originalPhotoButton setTitle:@"原图" forState:UIControlStateNormal];
-        [_originalPhotoButton setTitle:@"原图" forState:UIControlStateSelected];
-        [_originalPhotoButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        [_originalPhotoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [_originalPhotoButton setImage:[UIImage imageNamed:@"preview_original_def"] forState:UIControlStateNormal];
-        [_originalPhotoButton setImage:[UIImage imageNamed:@"photo_original_sel"] forState:UIControlStateSelected];
-        
-        _originalPhotoLable = [[UILabel alloc] init];
-        _originalPhotoLable.frame = CGRectMake(60, 0, 70, 44);
-        _originalPhotoLable.textAlignment = NSTextAlignmentLeft;
-        _originalPhotoLable.font = [UIFont systemFontOfSize:13];
-        _originalPhotoLable.textColor = [UIColor whiteColor];
-        _originalPhotoLable.backgroundColor = [UIColor clearColor];
-        if (_isSelectOriginalPhoto) [self showPhotoBytes];
-    }
+//    TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
+//    if (imagePickerVc.allowPickingOriginalPhoto) {
+//        _originalPhotoButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        _originalPhotoButton.frame = CGRectMake(5, 0, 120, 44);
+//        _originalPhotoButton.imageEdgeInsets = UIEdgeInsetsMake(0, -8, 0, 0);
+//        _originalPhotoButton.contentEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 0);
+//        _originalPhotoButton.backgroundColor = [UIColor clearColor];
+//        [_originalPhotoButton addTarget:self action:@selector(originalPhotoButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//        _originalPhotoButton.titleLabel.font = [UIFont systemFontOfSize:13];
+//        [_originalPhotoButton setTitle:@"原图" forState:UIControlStateNormal];
+//        [_originalPhotoButton setTitle:@"原图" forState:UIControlStateSelected];
+//        [_originalPhotoButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//        [_originalPhotoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+//        [_originalPhotoButton setImage:[UIImage imageNamed:@"preview_original_def"] forState:UIControlStateNormal];
+//        [_originalPhotoButton setImage:[UIImage imageNamed:@"photo_original_sel"] forState:UIControlStateSelected];
+//        
+//        _originalPhotoLable = [[UILabel alloc] init];
+//        _originalPhotoLable.frame = CGRectMake(60, 0, 70, 44);
+//        _originalPhotoLable.textAlignment = NSTextAlignmentLeft;
+//        _originalPhotoLable.font = [UIFont systemFontOfSize:13];
+//        _originalPhotoLable.textColor = [UIColor whiteColor];
+//        _originalPhotoLable.backgroundColor = [UIColor clearColor];
+//        if (_isSelectOriginalPhoto) [self showPhotoBytes];
+//    }
     
-    _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _okButton.frame = CGRectMake(self.view.width - 44 - 12, 0, 44, 44);
-    _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
-    [_okButton setTitleColor:kOKButtonTitleColorNormal forState:UIControlStateNormal];
+//    _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    _okButton.frame = CGRectMake(self.view.width - 44 - 12, 0, 44, 44);
+//    _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
+//    [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
+//    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
+//    [_okButton setTitleColor:kOKButtonTitleColorNormal forState:UIControlStateNormal];
     
     _numberImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo_number_icon"]];
     _numberImageView.backgroundColor = [UIColor clearColor];
@@ -132,7 +139,7 @@
     _numberLable.backgroundColor = [UIColor clearColor];
 
     [_originalPhotoButton addSubview:_originalPhotoLable];
-    [_toolBar addSubview:_okButton];
+//    [_toolBar addSubview:_okButton];
     [_toolBar addSubview:_originalPhotoButton];
     [_toolBar addSubview:_numberImageView];
     [_toolBar addSubview:_numberLable];

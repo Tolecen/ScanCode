@@ -21,8 +21,10 @@
     QRView *qrRectView;
     CGRect cropRect;
     UILabel * labIntroudction;
+    UILabel * titleLabel;
     UILabel * bottomL;
     UIButton * lbBtn;
+    UIButton * toGenerateVCBtn;
     
     BOOL canScan;
 }
@@ -82,6 +84,26 @@
     [self.view addSubview:lbBtn];
     [lbBtn addTarget:self action:@selector(selectFromLib) forControlEvents:UIControlEventTouchUpInside];
     
+    titleLabel= [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width-140)/2, 30, 140, 35)];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont boldSystemFontOfSize:17];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.text=@"Scan Code";
+    [self.view addSubview:titleLabel];
+    
+    toGenerateVCBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [toGenerateVCBtn setFrame:CGRectMake(self.view.frame.size.width-110, 30, 100, 35)];
+    toGenerateVCBtn.backgroundColor = [UIColor clearColor];
+    toGenerateVCBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [toGenerateVCBtn setTitle:@"Generate >" forState:UIControlStateNormal];
+//    toGenerateVCBtn.layer.cornerRadius = 5;
+//    toGenerateVCBtn.layer.borderWidth = 1;
+//    toGenerateVCBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    toGenerateVCBtn.layer.masksToBounds = YES;
+    [self.view addSubview:toGenerateVCBtn];
+    [toGenerateVCBtn addTarget:self action:@selector(toGenerateVC) forControlEvents:UIControlEventTouchUpInside];
+    
     bottomL= [[UILabel alloc] initWithFrame:CGRectMake(20, screenHeight-50, screenWidth-40, 20)];
     bottomL.backgroundColor = [UIColor clearColor];
     bottomL.font = [UIFont systemFontOfSize:12];
@@ -109,7 +131,12 @@
     _preview = nil;
     
 }
-
+-(void)toGenerateVC
+{
+    [self dismissViewControllerAnimated:NO completion:^{
+        self.didDismissed();
+    }];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -119,6 +146,8 @@
     [self.view bringSubviewToFront:labIntroudction];
     [self.view bringSubviewToFront:bottomL];
     [self.view bringSubviewToFront:lbBtn];
+    [self.view bringSubviewToFront:toGenerateVCBtn];
+    [self.view bringSubviewToFront:titleLabel];
     
     CGFloat screenHeight = self.view.frame.size.height;
     CGFloat screenWidth = self.view.frame.size.width;

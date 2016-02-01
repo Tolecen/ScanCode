@@ -45,8 +45,8 @@
 - (void)setType:(TZAssetCellType)type {
     _type = type;
     if (type == TZAssetCellTypePhoto || type == TZAssetCellTypeLivePhoto) {
-        _selectImageView.hidden = NO;
-        _selectPhotoButton.hidden = NO;
+        _selectImageView.hidden = YES;
+        _selectPhotoButton.hidden = YES;
         _bottomView.hidden = YES;
     } else {
         _selectImageView.hidden = YES;
