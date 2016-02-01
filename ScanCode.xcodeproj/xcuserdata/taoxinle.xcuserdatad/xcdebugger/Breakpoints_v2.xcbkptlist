@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScanCode/QRCodeViewController.m"
-            timestampString = "475743033.783578"
+            timestampString = "475985360.705208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

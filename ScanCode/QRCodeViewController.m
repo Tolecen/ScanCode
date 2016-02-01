@@ -7,14 +7,15 @@
 //
 
 #import "QRCodeViewController.h"
-
+#import "ProgressHUD.h"
 #import "QRView.h"
-
+#import "ZBarSDK.h"
 #import "QRCodeDao.h"
 #import "WebContentViewController.h"
 #import "TextContentViewController.h"
 #import "ZBarReaderController.h"
-@interface QRCodeViewController ()
+#import "TZImagePickerController.h"
+@interface QRCodeViewController ()<TZImagePickerControllerDelegate>
 
 {
     QRView *qrRectView;
@@ -96,9 +97,10 @@
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [super viewDidDisappear:YES];
+    [super viewWillDisappear:YES];
+    [_session stopRunning];
     [qrRectView removeFromSuperview];
     [_preview removeFromSuperlayer];
     _output = nil;
@@ -188,7 +190,7 @@
     }
     
     
-    [_session stopRunning];
+    
     NSLog(@"stringValue = %@", stringValue);
     
     if ([stringValue hasPrefix:@"http"]) {
@@ -225,13 +227,104 @@
 
 -(void)selectFromLib
 {
-    ZBarReaderController * zv = [[ZBarReaderController alloc] init];
-//    zv.view.backgroundColor = [UIColor blackColor];
-    zv.navigationBar.barTintColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
-    zv.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:zv animated:YES completion:^{
+//    ZBarReaderController * zv = [[ZBarReaderController alloc] init];
+////    zv.view.backgroundColor = [UIColor blackColor];
+//    zv.navigationBar.barTintColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.8];
+//    zv.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    [self presentViewController:zv animated:YES completion:^{
+//        
+//    }];
+    
+    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+    
+    // You can get the photos by block, the same as by delegate.
+    // 你可以通过block或者代理，来得到用户选择的照片.
+    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
         
     }];
+    
+    [self presentViewController:imagePickerVc animated:YES completion:nil];
+}
+#pragma mark TZImagePickerControllerDelegate
+
+/// User click cancel button
+/// 用户点击了取消
+- (void)imagePickerControllerDidCancel:(TZImagePickerController *)picker {
+     NSLog(@"cancel");
+}
+
+/// User finish picking photo，if assets are not empty, user picking original photo.
+/// 用户选择好了图片，如果assets非空，则用户选择了原图。
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray *)photos sourceAssets:(NSArray *)assets{
+    [ProgressHUD show:@"Scaning..."];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        if (photos.count>0) {
+            NSString * stringValue;
+            UIImage * img = [photos firstObject];
+            ZBarImageScanner * sc = [[ZBarImageScanner alloc] init];
+            if ([sc scanImage:[[ZBarImage alloc] initWithCGImage:img.CGImage]]) {
+                ZBarSymbol * symbol;
+                for(symbol in sc.results)
+                    break;
+                stringValue = symbol.data;
+                NSLog(@"result:%@",symbol.data);
+                [self showResultWithStr:stringValue];
+                
+            }
+            else
+            {
+                [self showResultWithStr:nil];
+            }
+        }
+        
+    }];
+    
+}
+
+-(void)showResultWithStr:(NSString *)stringValue
+{
+    if (!stringValue) {
+        [ProgressHUD showError:@"No Results"];
+        return;
+    }
+    [ProgressHUD dismiss];
+    if ([stringValue hasPrefix:@"http"]) {
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+            NSLog(@"111");
+            SFSafariViewController * sv = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:stringValue]];
+            sv.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+            [self presentViewController:sv animated:YES completion:^{
+                
+            }];
+        }
+        else{
+            NSLog(@"222");
+            WebContentViewController * web = [[WebContentViewController alloc] init];
+            web.urlStr = stringValue;
+            web.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self presentViewController:web animated:YES completion:^{
+                
+            }];
+        }
+    }
+    else
+    {
+        NSLog(@"333");
+        TextContentViewController * tb = [[TextContentViewController alloc] init];
+        tb.str = stringValue;
+        tb.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:tb animated:YES completion:^{
+            
+        }];
+    }
+
+}
+
+/// User finish picking video,
+/// 用户选择好了视频
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset {
+    
 }
 
 /*
