@@ -39,6 +39,8 @@
 		D814ED821C5F22BB009D7616 /* scanlib.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED811C5F22BB009D7616 /* scanlib.png */; };
 		D814ED841C5F243C009D7616 /* generateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED831C5F243C009D7616 /* generateicon.png */; };
 		D814ED871C5F44D9009D7616 /* UIActionSheet+block.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED861C5F44D9009D7616 /* UIActionSheet+block.m */; };
+		D814ED8A1C5F4E68009D7616 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D814ED881C5F4E68009D7616 /* libMobClickLibrary.a */; };
+		D814ED8C1C5F4E82009D7616 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D814ED8B1C5F4E82009D7616 /* libz.tbd */; };
 		D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8251D131BE8535B00473B49 /* TextContentViewController.m */; };
 		D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8251D171BE8EB9A00473B49 /* Default-568h@2x.png */; };
 		D8328CE31BE757BA00454877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE21BE757BA00454877 /* main.m */; };
@@ -141,6 +143,9 @@
 		D814ED831C5F243C009D7616 /* generateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generateicon.png; sourceTree = "<group>"; };
 		D814ED851C5F44D9009D7616 /* UIActionSheet+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+block.h"; sourceTree = "<group>"; };
 		D814ED861C5F44D9009D7616 /* UIActionSheet+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+block.m"; sourceTree = "<group>"; };
+		D814ED881C5F4E68009D7616 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		D814ED891C5F4E68009D7616 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		D814ED8B1C5F4E82009D7616 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D8251D121BE8535B00473B49 /* TextContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentViewController.h; sourceTree = "<group>"; };
 		D8251D131BE8535B00473B49 /* TextContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentViewController.m; sourceTree = "<group>"; };
 		D8251D151BE8984700473B49 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -231,6 +236,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D814ED8C1C5F4E82009D7616 /* libz.tbd in Frameworks */,
+				D814ED8A1C5F4E68009D7616 /* libMobClickLibrary.a in Frameworks */,
 				D8D63C031C5B3C63002C823B /* libiconv.tbd in Frameworks */,
 				D8D63C011C5B3C55002C823B /* QuartzCore.framework in Frameworks */,
 				D8D63BFF1C5B3C48002C823B /* CoreVideo.framework in Frameworks */,
@@ -321,6 +328,7 @@
 		D8328CD51BE757BA00454877 = {
 			isa = PBXGroup;
 			children = (
+				D814ED8B1C5F4E82009D7616 /* libz.tbd */,
 				D8D63C021C5B3C63002C823B /* libiconv.tbd */,
 				D8D63C001C5B3C55002C823B /* QuartzCore.framework */,
 				D8D63BFE1C5B3C48002C823B /* CoreVideo.framework */,
@@ -374,6 +382,8 @@
 				D8328D231BE761E500454877 /* NJKWebViewProgress.m */,
 				D8328D241BE761E500454877 /* NJKWebViewProgressView.h */,
 				D8328D251BE761E500454877 /* NJKWebViewProgressView.m */,
+				D814ED881C5F4E68009D7616 /* libMobClickLibrary.a */,
+				D814ED891C5F4E68009D7616 /* MobClick.h */,
 				D814ED831C5F243C009D7616 /* generateicon.png */,
 				D814ED7F1C5F2169009D7616 /* scanimage.png */,
 				D814ED811C5F22BB009D7616 /* scanlib.png */,
@@ -846,6 +856,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScanCode/ZBarSDK",
+					"$(PROJECT_DIR)/ScanCode",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
 				PRODUCT_MODULE_NAME = SCSwiftModule;
@@ -867,6 +878,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScanCode/ZBarSDK",
+					"$(PROJECT_DIR)/ScanCode",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.uzero.scanqr;
 				PRODUCT_MODULE_NAME = SCSwiftModule;

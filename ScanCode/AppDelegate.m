@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MobClick.h"
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-
+    [MobClick startWithAppkey:@"56af16c6e0f55ae260000508" reportPolicy:SEND_ON_EXIT channelId:@""];
         
     [self configShortCutItems];
     // Override point for customization after application launch.
