@@ -16,10 +16,36 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [self configShortCutItems];
     // Override point for customization after application launch.
     return YES;
 }
+
+- (void)configShortCutItems {
+    NSMutableArray *shortcutItems = [NSMutableArray array];
+    UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"1" localizedTitle:@"Scan from Camera" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"scanimage"] userInfo:nil];
+    UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"2" localizedTitle:@"Scan from Photo" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"scanlib"] userInfo:nil];
+    UIApplicationShortcutItem *item3 = [[UIApplicationShortcutItem alloc] initWithType:@"3" localizedTitle:@"Generate QR Code" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"generateicon"] userInfo:nil];
+    [shortcutItems addObject:item1];
+    [shortcutItems addObject:item2];
+    [shortcutItems addObject:item3];
+    
+    [[UIApplication sharedApplication] setShortcutItems:shortcutItems];
+}
+
+// 处理shortcutItem
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    switch (shortcutItem.type.integerValue) {
+        case 1: { // 测试1
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"gotoTestVc" object:self userInfo:@{@"type":@"1"}];
+        }
+        case 2: { // 测试2
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"gotoTestVc" object:self userInfo:@{@"type":@"2"}];
+        }   break;
+        default:
+            break;
+    }
+ }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

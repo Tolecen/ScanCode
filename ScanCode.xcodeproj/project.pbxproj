@@ -35,6 +35,9 @@
 		D814ED7A1C5EF284009D7616 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D814ED771C5EF284009D7616 /* ProgressHUD.bundle */; };
 		D814ED7B1C5EF284009D7616 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED791C5EF284009D7616 /* ProgressHUD.m */; };
 		D814ED7E1C5F006E009D7616 /* GenerateCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */; };
+		D814ED801C5F2169009D7616 /* scanimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED7F1C5F2169009D7616 /* scanimage.png */; };
+		D814ED821C5F22BB009D7616 /* scanlib.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED811C5F22BB009D7616 /* scanlib.png */; };
+		D814ED841C5F243C009D7616 /* generateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED831C5F243C009D7616 /* generateicon.png */; };
 		D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8251D131BE8535B00473B49 /* TextContentViewController.m */; };
 		D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8251D171BE8EB9A00473B49 /* Default-568h@2x.png */; };
 		D8328CE31BE757BA00454877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE21BE757BA00454877 /* main.m */; };
@@ -132,6 +135,9 @@
 		D814ED791C5EF284009D7616 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		D814ED7C1C5F006E009D7616 /* GenerateCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenerateCodeViewController.h; sourceTree = "<group>"; };
 		D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenerateCodeViewController.m; sourceTree = "<group>"; };
+		D814ED7F1C5F2169009D7616 /* scanimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanimage.png; sourceTree = "<group>"; };
+		D814ED811C5F22BB009D7616 /* scanlib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanlib.png; sourceTree = "<group>"; };
+		D814ED831C5F243C009D7616 /* generateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generateicon.png; sourceTree = "<group>"; };
 		D8251D121BE8535B00473B49 /* TextContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentViewController.h; sourceTree = "<group>"; };
 		D8251D131BE8535B00473B49 /* TextContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentViewController.m; sourceTree = "<group>"; };
 		D8251D151BE8984700473B49 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -363,6 +369,9 @@
 				D8328D231BE761E500454877 /* NJKWebViewProgress.m */,
 				D8328D241BE761E500454877 /* NJKWebViewProgressView.h */,
 				D8328D251BE761E500454877 /* NJKWebViewProgressView.m */,
+				D814ED831C5F243C009D7616 /* generateicon.png */,
+				D814ED7F1C5F2169009D7616 /* scanimage.png */,
+				D814ED811C5F22BB009D7616 /* scanlib.png */,
 				D8328D1D1BE75B1E00454877 /* qr_scan_line@2x.png */,
 				D8328D281BE7620300454877 /* bottom_btn_back.png */,
 				D8251D171BE8EB9A00473B49 /* Default-568h@2x.png */,
@@ -609,13 +618,16 @@
 				D8328CEC1BE757BA00454877 /* Main.storyboard in Resources */,
 				D8D63BF91C5B3C18002C823B /* zbar-samples.png in Resources */,
 				D814ED671C5EEC51009D7616 /* preview_number_icon@2x.png in Resources */,
+				D814ED841C5F243C009D7616 /* generateicon.png in Resources */,
 				D8D63BF71C5B3C18002C823B /* zbar-help.html in Resources */,
 				D814ED5D1C5EEC51009D7616 /* MMVideoPreviewPlay@2x.png in Resources */,
 				D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */,
+				D814ED801C5F2169009D7616 /* scanimage.png in Resources */,
 				D814ED5F1C5EEC51009D7616 /* navi_back@2x.png in Resources */,
 				D814ED6B1C5EEC51009D7616 /* TZAssetCell.xib in Resources */,
 				D814ED681C5EEC51009D7616 /* preview_original_def@2x.png in Resources */,
 				D8D63BF81C5B3C18002C823B /* zbar-helpicons.png in Resources */,
+				D814ED821C5F22BB009D7616 /* scanlib.png in Resources */,
 				D814ED661C5EEC51009D7616 /* photo_sel_previewVc@2x.png in Resources */,
 				D814ED621C5EEC51009D7616 /* photo_number_icon@2x.png in Resources */,
 				D814ED6C1C5EEC51009D7616 /* VideoSendIcon@2x.png in Resources */,
@@ -749,6 +761,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -795,6 +808,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinle Tao (CUVR22NJYL)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
