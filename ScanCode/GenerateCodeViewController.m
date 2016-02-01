@@ -179,7 +179,14 @@
             imageV.hidden = NO;
             textV.hidden = YES;
             saveBtn.hidden = NO;
-            generateBtn.frame = CGRectMake((self.view.frame.size.width-140)/2, saveBtn.frame.size.height+saveBtn.frame.origin.y+20, 140, 35);
+            if (screenHeight<500) {
+                saveBtn.frame = CGRectMake(self.view.frame.size.width-40-115, imageV.frame.size.height+imageV.frame.origin.y+20, 115, 35);
+                generateBtn.frame = CGRectMake(imageV.frame.origin.x, saveBtn.frame.origin.y, 115, 35);
+                
+            }
+            else{
+                generateBtn.frame = CGRectMake((self.view.frame.size.width-140)/2, saveBtn.frame.size.height+saveBtn.frame.origin.y+20, 140, 35);
+            }
             [generateBtn setTitle:@"Generate again" forState:UIControlStateNormal];
             desL.text = @"Long Press to Save image";
             [ProgressHUD dismiss];

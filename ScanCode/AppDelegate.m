@@ -16,6 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+
+        
     [self configShortCutItems];
     // Override point for customization after application launch.
     return YES;
@@ -26,11 +29,14 @@
     UIApplicationShortcutItem *item1 = [[UIApplicationShortcutItem alloc] initWithType:@"1" localizedTitle:@"Scan from Camera" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"scanimage"] userInfo:nil];
     UIApplicationShortcutItem *item2 = [[UIApplicationShortcutItem alloc] initWithType:@"2" localizedTitle:@"Scan from Photo" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"scanlib"] userInfo:nil];
     UIApplicationShortcutItem *item3 = [[UIApplicationShortcutItem alloc] initWithType:@"3" localizedTitle:@"Generate QR Code" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"generateicon"] userInfo:nil];
-    [shortcutItems addObject:item1];
-    [shortcutItems addObject:item2];
-    [shortcutItems addObject:item3];
-    
-    [[UIApplication sharedApplication] setShortcutItems:shortcutItems];
+    if (item1&&item2&&item3) {
+        [shortcutItems addObject:item1];
+        [shortcutItems addObject:item2];
+        [shortcutItems addObject:item3];
+        
+        [[UIApplication sharedApplication] setShortcutItems:shortcutItems];
+    }
+
 }
 
 // 处理shortcutItem
