@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <SafariServices/SafariServices.h>
-
+#import "TZImagePickerController.h"
 @protocol QRCodeViewControllerDelegate <NSObject>
 
 - (void)scanQRCodeResultForSalesAgentNo:(NSString *)salesAgentNo licenceSerial:(NSString *)licenceSerial;
@@ -30,5 +30,10 @@
 @property (strong, nonatomic) AVCaptureMetadataOutput *output;
 @property (strong, nonatomic) AVCaptureSession *session;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *preview;
+@property (assign, nonatomic) BOOL inPhoto;
+@property (strong, nonatomic) TZImagePickerController *imagePickerVc;
+
+-(void)selectFromLib;
+-(void)disPhotoVC;
 
 @end

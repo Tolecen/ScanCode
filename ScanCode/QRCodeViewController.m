@@ -14,7 +14,7 @@
 #import "WebContentViewController.h"
 #import "TextContentViewController.h"
 #import "ZBarReaderController.h"
-#import "TZImagePickerController.h"
+
 @interface QRCodeViewController ()<TZImagePickerControllerDelegate>
 
 {
@@ -25,6 +25,8 @@
     UILabel * bottomL;
     UIButton * lbBtn;
     UIButton * toGenerateVCBtn;
+    
+    
     
     BOOL canScan;
 }
@@ -38,7 +40,7 @@
 
     canScan = YES;
 //    [self setupCamera];
-    
+    self.view.backgroundColor = [UIColor colorWithRed:108.f/255 green:151.f/255 blue:185.f/255 alpha:1.f];
     CGRect screenRect = [UIScreen mainScreen].bounds;
     qrRectView = [[QRView alloc] initWithFrame:screenRect];
     qrRectView.transparentArea = CGSizeMake(220, 220);
@@ -263,16 +265,27 @@
 //    [self presentViewController:zv animated:YES completion:^{
 //        
 //    }];
-    
-    TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
-    
-    // You can get the photos by block, the same as by delegate.
-    // 你可以通过block或者代理，来得到用户选择的照片.
-    [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
+    if (!self.inPhoto) {
+        self.imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
         
-    }];
-    
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
+        // You can get the photos by block, the same as by delegate.
+        // 你可以通过block或者代理，来得到用户选择的照片.
+        [self.imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
+            
+        }];
+        self.inPhoto = YES;
+        [self presentViewController:self.imagePickerVc animated:YES completion:nil];
+    }
+
+}
+-(void)disPhotoVC
+{
+    if (self.inPhoto) {
+        self.inPhoto = NO;
+        [self.imagePickerVc dismissViewControllerAnimated:NO completion:^{
+            
+        }];
+    }
 }
 #pragma mark TZImagePickerControllerDelegate
 
@@ -280,12 +293,14 @@
 /// 用户点击了取消
 - (void)imagePickerControllerDidCancel:(TZImagePickerController *)picker {
      NSLog(@"cancel");
+    self.inPhoto = NO;
 }
 
 /// User finish picking photo，if assets are not empty, user picking original photo.
 /// 用户选择好了图片，如果assets非空，则用户选择了原图。
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray *)photos sourceAssets:(NSArray *)assets{
     [ProgressHUD show:@"Scaning..."];
+    self.inPhoto = NO;
     [picker dismissViewControllerAnimated:YES completion:^{
         if (photos.count>0) {
             NSString * stringValue;
@@ -353,7 +368,7 @@
 /// User finish picking video,
 /// 用户选择好了视频
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset {
-    
+    self.inPhoto = NO;
 }
 
 /*

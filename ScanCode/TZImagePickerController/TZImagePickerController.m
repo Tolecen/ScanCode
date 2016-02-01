@@ -159,10 +159,10 @@
     if (_timer) { [_timer invalidate]; _timer = nil;}
     
     if (self.childViewControllers.count > 0) {
-        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 0, 44, 44)];
+        UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 0, 64, 44)];
         [backButton setImage:[UIImage imageNamed:@"navi_back"] forState:UIControlStateNormal];
         backButton.imageEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
-        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        [backButton setTitle:@"Back" forState:UIControlStateNormal];
         backButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [backButton addTarget:self action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
@@ -185,8 +185,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"照片";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    self.navigationItem.title = @"Photo";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     [self configTableView];
 }
 

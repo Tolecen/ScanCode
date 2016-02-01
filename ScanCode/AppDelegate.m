@@ -35,17 +35,9 @@
 
 // 处理shortcutItem
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
-    switch (shortcutItem.type.integerValue) {
-        case 1: { // 测试1
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"gotoTestVc" object:self userInfo:@{@"type":@"1"}];
-        }
-        case 2: { // 测试2
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"gotoTestVc" object:self userInfo:@{@"type":@"2"}];
-        }   break;
-        default:
-            break;
-    }
- }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:[NSNumber numberWithInteger:shortcutItem.type.integerValue]];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

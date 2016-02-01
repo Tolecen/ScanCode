@@ -44,7 +44,7 @@
     _shouldScrollToBottom = YES;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = _model.name;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
     [[TZImageManager manager] getAssetsFromFetchResult:_model.result allowPickingVideo:imagePickerVc.allowPickingVideo completion:^(NSArray<TZAssetModel *> *models) {
         _photoArr = [NSMutableArray arrayWithArray:models];
@@ -122,11 +122,11 @@
     }
     
     _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _okButton.frame = CGRectMake(self.view.width - 44 - 12, 3, 44, 44);
+    _okButton.frame = CGRectMake(self.view.width - 64 - 12, 3, 64, 44);
     _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
-    [_okButton setTitle:@"确定" forState:UIControlStateDisabled];
+    [_okButton setTitle:@"Confirm" forState:UIControlStateNormal];
+    [_okButton setTitle:@"Confirm" forState:UIControlStateDisabled];
     [_okButton setTitleColor:kOKButtonTitleColorNormal forState:UIControlStateNormal];
     [_okButton setTitleColor:kOKButtonTitleColorDisabled forState:UIControlStateDisabled];
     _okButton.enabled = NO;
@@ -251,7 +251,7 @@
                 [weakSelf.selectedPhotoArr addObject:model];
                 [weakSelf refreshBottomToolBarStatus];
             } else {
-                [imagePickerVc showAlertWithTitle:[NSString stringWithFormat:@"你最多只能选择%zd张照片",imagePickerVc.maxImagesCount]];
+                [imagePickerVc showAlertWithTitle:[NSString stringWithFormat:@"Just Select %zd Photo",imagePickerVc.maxImagesCount]];
             }
         }
          [UIView showOscillatoryAnimationWithLayer:weakLayer type:TZOscillatoryAnimationToSmaller];

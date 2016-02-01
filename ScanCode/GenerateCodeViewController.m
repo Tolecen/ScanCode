@@ -9,6 +9,7 @@
 #import "GenerateCodeViewController.h"
 #import "QRCodeGenerator.h"
 #import "ProgressHUD.h"
+#import "UIActionSheet+block.h"
 @interface GenerateCodeViewController ()
 {
     UITextView * textV;
@@ -27,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor colorWithRed:108.f/255 green:151.f/255 blue:185.f/255 alpha:1.f];
     screenHeight = self.view.frame.size.height;
     screenWidth = self.view.frame.size.width;
     
@@ -43,7 +44,7 @@
     desL.backgroundColor = [UIColor clearColor];
     desL.font = [UIFont systemFontOfSize:14];
     desL.textAlignment = NSTextAlignmentCenter;
-    desL.textColor=[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
+    desL.textColor=[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:.6f];
     desL.text=@"Input the string or url below";
     [self.view addSubview:desL];
     
@@ -61,11 +62,15 @@
     
     
     textV = [[UITextView alloc] initWithFrame:CGRectMake(30, 124,self.view.frame.size.width-60 , 200)];
-    textV.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
+    textV.backgroundColor = [UIColor colorWithRed:136/255.f green:178/255.f blue:211/255.f alpha:1];
     textV.scrollEnabled = YES;
     textV.font = [UIFont systemFontOfSize:16];
-    textV.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    textV.textColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
     [self.view addSubview:textV];
+    textV.layer.cornerRadius = 5;
+    textV.layer.borderColor = [[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1] CGColor];
+    textV.layer.borderWidth = 1;
+    textV.layer.masksToBounds = YES;
     
     textV.inputAccessoryView =({
         UIToolbar* toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 35)];
@@ -81,6 +86,10 @@
     imageV.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
     [self.view addSubview:imageV];
     imageV.hidden = YES;
+    
+    imageV.userInteractionEnabled = YES;
+    UILongPressGestureRecognizer * longP = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    [imageV addGestureRecognizer:longP];
     
     generateBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [generateBtn setFrame:CGRectMake((self.view.frame.size.width-140)/2, textV.frame.size.height+textV.frame.origin.y+35, 140, 35)];
@@ -115,6 +124,22 @@
     bottomL.text=@"Made by Tolecen";
     [self.view addSubview:bottomL];
     // Do any additional setup after loading the view.
+}
+-(void)handleLongPress:(UILongPressGestureRecognizer *)press
+{
+    
+    if (press.state == UIGestureRecognizerStateEnded) {
+        
+        return;
+        
+    } else if (press.state == UIGestureRecognizerStateBegan) {
+        UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Save Image", nil];
+        [sheet showInView:self.view action:^(NSInteger index) {
+            if (index==0) {
+                [self saveImage];
+            }
+        }];
+    }
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
@@ -156,7 +181,7 @@
             saveBtn.hidden = NO;
             generateBtn.frame = CGRectMake((self.view.frame.size.width-140)/2, saveBtn.frame.size.height+saveBtn.frame.origin.y+20, 140, 35);
             [generateBtn setTitle:@"Generate again" forState:UIControlStateNormal];
-            desL.hidden = YES;
+            desL.text = @"Long Press to Save image";
             [ProgressHUD dismiss];
         }
         else
@@ -175,7 +200,7 @@
     saveBtn.hidden = YES;
     generateBtn.frame = CGRectMake((self.view.frame.size.width-140)/2, textV.frame.size.height+textV.frame.origin.y+20, 140, 35);
     [generateBtn setTitle:@"Generate" forState:UIControlStateNormal];
-    desL.hidden = NO;
+    desL.text = @"Input the string or url below";
     textV.text = @"";
     [textV becomeFirstResponder];
 }

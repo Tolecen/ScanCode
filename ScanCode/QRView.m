@@ -91,7 +91,7 @@ static NSTimeInterval kQrLineanimateDuration = 0.02;
 
 - (void)addScreenFillRect:(CGContextRef)ctx rect:(CGRect)rect {
     
-    CGContextSetRGBFillColor(ctx, 0 / 255.0,0 / 255.0,0 / 255.0,0.7);
+    CGContextSetRGBFillColor(ctx, 108 / 255.0,151 / 255.0,185 / 255.0,0.6);
     CGContextFillRect(ctx, rect);   //draw the transparent layer
 }
 

@@ -38,6 +38,7 @@
 		D814ED801C5F2169009D7616 /* scanimage.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED7F1C5F2169009D7616 /* scanimage.png */; };
 		D814ED821C5F22BB009D7616 /* scanlib.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED811C5F22BB009D7616 /* scanlib.png */; };
 		D814ED841C5F243C009D7616 /* generateicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D814ED831C5F243C009D7616 /* generateicon.png */; };
+		D814ED871C5F44D9009D7616 /* UIActionSheet+block.m in Sources */ = {isa = PBXBuildFile; fileRef = D814ED861C5F44D9009D7616 /* UIActionSheet+block.m */; };
 		D8251D141BE8535B00473B49 /* TextContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8251D131BE8535B00473B49 /* TextContentViewController.m */; };
 		D8251D181BE8EB9A00473B49 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8251D171BE8EB9A00473B49 /* Default-568h@2x.png */; };
 		D8328CE31BE757BA00454877 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8328CE21BE757BA00454877 /* main.m */; };
@@ -138,6 +139,8 @@
 		D814ED7F1C5F2169009D7616 /* scanimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanimage.png; sourceTree = "<group>"; };
 		D814ED811C5F22BB009D7616 /* scanlib.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scanlib.png; sourceTree = "<group>"; };
 		D814ED831C5F243C009D7616 /* generateicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = generateicon.png; sourceTree = "<group>"; };
+		D814ED851C5F44D9009D7616 /* UIActionSheet+block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+block.h"; sourceTree = "<group>"; };
+		D814ED861C5F44D9009D7616 /* UIActionSheet+block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+block.m"; sourceTree = "<group>"; };
 		D8251D121BE8535B00473B49 /* TextContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextContentViewController.h; sourceTree = "<group>"; };
 		D8251D131BE8535B00473B49 /* TextContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextContentViewController.m; sourceTree = "<group>"; };
 		D8251D151BE8984700473B49 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -353,6 +356,8 @@
 				D8328CE51BE757BA00454877 /* AppDelegate.m */,
 				D8328CE71BE757BA00454877 /* ViewController.h */,
 				D8328CE81BE757BA00454877 /* ViewController.m */,
+				D814ED851C5F44D9009D7616 /* UIActionSheet+block.h */,
+				D814ED861C5F44D9009D7616 /* UIActionSheet+block.m */,
 				D814ED7C1C5F006E009D7616 /* GenerateCodeViewController.h */,
 				D814ED7D1C5F006E009D7616 /* GenerateCodeViewController.m */,
 				D8328D141BE7582600454877 /* QRCodeViewController.h */,
@@ -676,6 +681,7 @@
 				D814ED6D1C5EEC51009D7616 /* TZAssetCell.m in Sources */,
 				D8328D161BE7582600454877 /* QRCodeViewController.m in Sources */,
 				D814ED6E1C5EEC51009D7616 /* TZAssetModel.m in Sources */,
+				D814ED871C5F44D9009D7616 /* UIActionSheet+block.m in Sources */,
 				D8328CE31BE757BA00454877 /* main.m in Sources */,
 				D8D63BD61C5B3BBE002C823B /* split.c in Sources */,
 				D8328D1C1BE7587100454877 /* QRCodeDao.m in Sources */,

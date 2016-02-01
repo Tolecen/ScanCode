@@ -70,10 +70,10 @@
     [_backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     
     _okButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _okButton.frame = CGRectMake(self.view.width - 54, 12, 44, 44);
+    _okButton.frame = CGRectMake(self.view.width - 74, 12, 64, 44);
     _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
+    [_okButton setTitle:@"Confirm" forState:UIControlStateNormal];
     [_okButton setTitleColor:kOKButtonTitleColorNormal forState:UIControlStateNormal];
 //    _selectButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width - 54, 10, 42, 42)];
 //    [_selectButton setImage:[UIImage imageNamed:@"photo_def_photoPickerVc"] forState:UIControlStateNormal];
