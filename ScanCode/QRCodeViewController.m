@@ -193,8 +193,8 @@
     }
     
     // 条码类型
-    if ([self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
-        self.output.metadataObjectTypes = [NSArray arrayWithObject:AVMetadataObjectTypeQRCode];
+    if ([self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]||[self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypePDF417Code]) {
+        self.output.metadataObjectTypes = [NSArray arrayWithObjects:AVMetadataObjectTypeQRCode,AVMetadataObjectTypePDF417Code, nil];
     }
     
     // Preview
