@@ -10,6 +10,8 @@
 #import "QRCodeGenerator.h"
 #import "ProgressHUD.h"
 #import "UIActionSheet+block.h"
+#import "WebContentViewController.h"
+#import <SafariServices/SafariServices.h>
 @interface GenerateCodeViewController ()
 {
     UITextView * textV;
@@ -123,8 +125,36 @@
     bottomL.textColor=[UIColor whiteColor];
     bottomL.text=@"Made by Tolecen";
     [self.view addSubview:bottomL];
+    bottomL.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel)];
+    [bottomL addGestureRecognizer:tap];
     // Do any additional setup after loading the view.
 }
+
+-(void)tapLabel
+{
+    NSString * stringValue = @"http://xinle.co";
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+        NSLog(@"111");
+        SFSafariViewController * sv = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:stringValue]];
+        sv.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        [self presentViewController:sv animated:YES completion:^{
+            
+        }];
+    }
+    else{
+        NSLog(@"222");
+        WebContentViewController * web = [[WebContentViewController alloc] init];
+        web.urlStr = stringValue;
+        web.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:web animated:YES completion:^{
+            
+        }];
+    }
+}
+
 -(void)handleLongPress:(UILongPressGestureRecognizer *)press
 {
     

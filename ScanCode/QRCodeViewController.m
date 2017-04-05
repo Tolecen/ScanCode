@@ -113,6 +113,33 @@
     bottomL.textColor=[UIColor whiteColor];
     bottomL.text=@"Made by Tolecen";
     [self.view addSubview:bottomL];
+    bottomL.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapLabel)];
+    [bottomL addGestureRecognizer:tap];
+}
+
+-(void)tapLabel
+{
+    NSString * stringValue = @"http://xinle.co";
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+        NSLog(@"111");
+        SFSafariViewController * sv = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:stringValue]];
+        sv.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+        [self presentViewController:sv animated:YES completion:^{
+            
+        }];
+    }
+    else{
+        NSLog(@"222");
+        WebContentViewController * web = [[WebContentViewController alloc] init];
+        web.urlStr = stringValue;
+        web.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self presentViewController:web animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -193,8 +220,8 @@
     }
     
     // 条码类型
-    if ([self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]) {
-        self.output.metadataObjectTypes = [NSArray arrayWithObject:AVMetadataObjectTypeQRCode];
+    if ([self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypeQRCode]||[self.output.availableMetadataObjectTypes containsObject:AVMetadataObjectTypePDF417Code]) {
+        self.output.metadataObjectTypes = [NSArray arrayWithObjects:AVMetadataObjectTypeQRCode,AVMetadataObjectTypePDF417Code, nil];
     }
     
     // Preview
