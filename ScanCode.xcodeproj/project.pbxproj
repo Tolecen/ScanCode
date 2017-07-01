@@ -12,6 +12,7 @@
 		979244A71F078C6B0071BA06 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 979244A31F078C6B0071BA06 /* UIImage+Resize.m */; };
 		979244A81F078C6B0071BA06 /* TTImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 979244A51F078C6B0071BA06 /* TTImageHelper.m */; };
 		979244A91F078C6B0071BA06 /* TTImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 979244A51F078C6B0071BA06 /* TTImageHelper.m */; };
+		979244AA1F0792850071BA06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8328CED1BE757BA00454877 /* Assets.xcassets */; };
 		97A6DAD31F07454F00688648 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A6DAD21F07454F00688648 /* ActionViewController.m */; };
 		97A6DAD61F07454F00688648 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A6DAD41F07454F00688648 /* MainInterface.storyboard */; };
 		97A6DADA1F07454F00688648 /* GenerateCode.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 97A6DACF1F07454F00688648 /* GenerateCode.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -690,6 +691,7 @@
 				97A6DBB81F0759F600688648 /* zbar-samples.png in Resources */,
 				97A6DBB41F0759F600688648 /* zbar-help.html in Resources */,
 				97A6DBB61F0759F600688648 /* zbar-helpicons.png in Resources */,
+				979244AA1F0792850071BA06 /* Assets.xcassets in Resources */,
 				97A6DBB21F0759F600688648 /* zbar-back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,6 +865,7 @@
 		97A6DADC1F07454F00688648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -888,6 +891,7 @@
 		97A6DADD1F07454F00688648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
