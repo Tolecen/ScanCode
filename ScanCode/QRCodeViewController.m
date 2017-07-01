@@ -293,15 +293,16 @@
 //        
 //    }];
     if (!self.inPhoto) {
-        self.imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
+        TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:1 delegate:self];
         
-        // You can get the photos by block, the same as by delegate.
-        // 你可以通过block或者代理，来得到用户选择的照片.
-        [self.imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
-            
-        }];
+        imagePickerVc.allowPickingVideo = NO;
+        imagePickerVc.allowPickingImage = YES;
+        imagePickerVc.allowPickingOriginalPhoto = YES;
+        imagePickerVc.sortAscendingByModificationDate = YES;
         self.inPhoto = YES;
-        [self presentViewController:self.imagePickerVc animated:YES completion:nil];
+        [self presentViewController:imagePickerVc animated:YES completion:nil];
+        
+        
     }
 
 }
@@ -318,17 +319,17 @@
 
 /// User click cancel button
 /// 用户点击了取消
-- (void)imagePickerControllerDidCancel:(TZImagePickerController *)picker {
+- (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
      NSLog(@"cancel");
     self.inPhoto = NO;
 }
 
 /// User finish picking photo，if assets are not empty, user picking original photo.
 /// 用户选择好了图片，如果assets非空，则用户选择了原图。
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray *)photos sourceAssets:(NSArray *)assets{
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos{
     [ProgressHUD show:@"Scaning..."];
     self.inPhoto = NO;
-    [picker dismissViewControllerAnimated:YES completion:^{
+//    [picker dismissViewControllerAnimated:YES completion:^{
         if (photos.count>0) {
             NSString * stringValue;
             UIImage * img = [photos firstObject];
@@ -348,7 +349,7 @@
             }
         }
         
-    }];
+//    }];
     
 }
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GenerateCode.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ScanCode.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9776F8D41F07306700AE104F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>97A6DACE1F07454F00688648</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D8328CDD1BE757BA00454877</key>
 		<dict>
 			<key>primary</key>
