@@ -306,7 +306,7 @@
                 generateBtn.frame = CGRectMake((self.view.frame.size.width-140)/2, saveBtn.frame.size.height+saveBtn.frame.origin.y+20, 140, 35);
             }
             [generateBtn setTitle:@"Generate again" forState:UIControlStateNormal];
-            desL.text = @"Long Press to Add Or Change Icon";
+            desL.text = @"Long press to add or change icon";
             [ProgressHUD dismiss];
         }
         else

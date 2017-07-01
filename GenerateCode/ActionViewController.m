@@ -482,7 +482,7 @@
             }
             [generateBtn setTitle:@"Generate again" forState:UIControlStateNormal];
             generateBtn.tag = 2;
-            desL.text = @"Long Press to Save image";
+            desL.text = @"Long press to add or change icon";
 //            [ProgressHUD dismiss];
         }
         else
